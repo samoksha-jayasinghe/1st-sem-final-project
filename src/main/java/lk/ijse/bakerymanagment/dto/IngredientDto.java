@@ -1,0 +1,24 @@
+package lk.ijse.bakerymanagment.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+/*@Getter
+@Setter
+@ToString*/
+@Data
+
+public class IngredientDto {
+    private String itemId;
+    private String productId;
+    private String batchno;
+    private String date;
+    private int qty;
+    private String ingredientName;
+
+    public IngredientDto(String inventoryId, String productId, String supplierId, int rawMaterial, int qty) {
+    }
+}

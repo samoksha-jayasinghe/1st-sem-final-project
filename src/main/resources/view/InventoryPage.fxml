@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="698.0" prefWidth="1021.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.CustomerPage">
+   <children>
+      <ImageView fitHeight="698.0" fitWidth="1021.0">
+         <image>
+            <Image url="@../../../../../../../../../Users/Samoksha%20Jayasinghe/Downloads/Bakery-managers-can-benefit-from-implementing-an-ERP-system.-1024x576.jpg" />
+         </image>
+         <effect>
+            <MotionBlur />
+         </effect>
+      </ImageView>
+      <Pane prefHeight="698.0" prefWidth="399.0">
+         <children>
+            <Text layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory" textAlignment="CENTER" wrappingWidth="399.0">
+               <font>
+                  <Font name="System Bold" size="30.0" />
+               </font>
+            </Text>
+            <VBox layoutX="51.0" layoutY="178.0" prefHeight="523.0" prefWidth="298.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory Id " wrappingWidth="108.13671875">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="    1" wrappingWidth="100.13671875">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Product Id" wrappingWidth="297.13671875">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <TextField prefHeight="25.0" prefWidth="265.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Id" wrappingWidth="297.13671875">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <TextField prefHeight="25.0" prefWidth="265.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Raw materials" wrappingWidth="297.13671875">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <TextField prefHeight="25.0" prefWidth="265.0" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Qty" wrappingWidth="297.13671875">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <TextField prefHeight="25.0" prefWidth="265.0" />
+                  <Pane prefHeight="162.0" prefWidth="298.0">
+                     <children>
+                        <Button layoutX="33.0" layoutY="34.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="105.0" text="Delete Inventory">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                           <cursor>
+                              <Cursor fx:constant="H_RESIZE" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="149.0" layoutY="34.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="105.0" text="Save Inventory">
+                           <effect>
+                              <Lighting>
+                                 <light>
+                                 </light>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                              </Lighting>
+                           </effect>
+                        </Button>
+                        <Button layoutX="149.0" layoutY="90.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="105.0" text="Reset Inventory">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Button>
+                        <Button layoutX="33.0" layoutY="90.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="105.0" text="Update Inventory">
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+            </VBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+         </children>
+      </Pane>
+      <Pane layoutX="495.0" layoutY="158.0" prefHeight="533.0" prefWidth="520.0">
+         <children>
+            <TableView editable="true" layoutX="22.0" layoutY="137.0" prefHeight="309.0" prefWidth="476.0">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Inventory Id" />
+                  <TableColumn prefWidth="75.0" text="Product Id" />
+                  <TableColumn prefWidth="75.0" text="Supplier Id" />
+                  <TableColumn prefWidth="115.0" text="Raw Materials" />
+                  <TableColumn prefWidth="92.0" text="Qty" />
+               </columns>
+            </TableView>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

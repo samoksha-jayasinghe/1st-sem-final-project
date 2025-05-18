@@ -5,7 +5,6 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.MotionBlur?>
 <?import javafx.scene.effect.Shadow?>
@@ -17,7 +16,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="698.0" prefWidth="1021.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.bakerymanagment.controller.">
+<AnchorPane prefHeight="698.0" prefWidth="1021.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.bakerymanagment.controller.UserController">
    <children>
       <ImageView fitHeight="698.0" fitWidth="1021.0">
          <image>
@@ -29,12 +28,12 @@
       </ImageView>
       <Pane prefHeight="698.0" prefWidth="399.0">
          <children>
-            <Text layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User" textAlignment="CENTER" wrappingWidth="399.0">
+            <Text layoutX="1.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User" textAlignment="CENTER" wrappingWidth="399.0">
                <font>
                   <Font name="System Bold" size="30.0" />
                </font>
             </Text>
-            <VBox layoutX="51.0" layoutY="178.0" prefHeight="523.0" prefWidth="298.0">
+            <VBox layoutX="51.0" layoutY="178.0" prefHeight="378.0" prefWidth="298.0">
                <children>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="User Id " wrappingWidth="108.13671875">
                      <font>
@@ -124,6 +123,8 @@
                </children>
             </VBox>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+            <TextField fx:id="txtSearch" accessibleText="Search" layoutX="51.0" layoutY="116.0" onAction="#btnSearchOnAction" prefHeight="25.0" prefWidth="298.0" promptText="🔍 | Search " />
+            <Button fx:id="txtBack" layoutX="174.0" layoutY="593.0" mnemonicParsing="false" onAction="#btnBackOnAction" text="&lt; Back" />
          </children>
       </Pane>
       <Pane layoutX="495.0" layoutY="158.0" prefHeight="533.0" prefWidth="520.0">

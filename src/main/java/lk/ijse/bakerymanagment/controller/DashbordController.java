@@ -7,50 +7,169 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.layout.AnchorPane;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class DashbordController implements Initializable {
     @FXML
     public AnchorPane AncDashbord;
+    public AnchorPane ancDashboard;
 
     public void customerOnAction(ActionEvent actionEvent) {
+        try {
+            ancDashboard.getChildren().clear();
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/CustomerPage.fxml"));
+            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
+            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
+            ancDashboard.getChildren().add(pane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void employeeOnAction(ActionEvent actionEvent) {
+        try {
+            ancDashboard.getChildren().clear();
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/EmployeeAttendnce.fxml"));
+            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
+            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
+            ancDashboard.getChildren().add(pane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void feedbackOnAction(ActionEvent actionEvent) {
+        try {
+            ancDashboard.getChildren().clear();
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/FeedbackPage.fxml"));
+            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
+            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
+            ancDashboard.getChildren().add(pane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void ingredientOnAction(ActionEvent actionEvent) {
+        try {
+            ancDashboard.getChildren().clear();
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/IngredientPage.fxml"));
+            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
+            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
+            ancDashboard.getChildren().add(pane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void inventoryOnAction(ActionEvent actionEvent) {
+        try {
+            ancDashboard.getChildren().clear();
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/InventoryPage.fxml"));
+            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
+            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
+            ancDashboard.getChildren().add(pane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void invoiceOnAction(ActionEvent actionEvent) {
+        try {
+            ancDashboard.getChildren().clear();
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/CustomerPage.fxml"));
+            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
+            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
+            ancDashboard.getChildren().add(pane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void itemOnAction(ActionEvent actionEvent) {
+        try {
+            ancDashboard.getChildren().clear();
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/Itempage.fxml"));
+            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
+            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
+            ancDashboard.getChildren().add(pane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void orderdetailsOnAction(ActionEvent actionEvent) {
+        try {
+            ancDashboard.getChildren().clear();
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/OrderDetailsPage.fxml"));
+            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
+            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
+            ancDashboard.getChildren().add(pane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void orderOnAction(ActionEvent actionEvent) {
+        try {
+            ancDashboard.getChildren().clear();
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/OrderPage.fxml"));
+            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
+            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
+            ancDashboard.getChildren().add(pane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void paymentOnAction(ActionEvent actionEvent) {
+        try {
+            ancDashboard.getChildren().clear();
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/PaymentPage.fxml"));
+            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
+            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
+            ancDashboard.getChildren().add(pane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void productOnAction(ActionEvent actionEvent) {
+        try {
+            ancDashboard.getChildren().clear();
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/ProductPage.fxml"));
+            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
+            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
+            ancDashboard.getChildren().add(pane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void supplierOnAction(ActionEvent actionEvent) {
+        try {
+            ancDashboard.getChildren().clear();
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/SupplierPage.fxml"));
+            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
+            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
+            ancDashboard.getChildren().add(pane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void userOnAction(ActionEvent actionEvent) {
+        try {
+            ancDashboard.getChildren().clear();
+            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/UserPage.fxml"));
+            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
+            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
+            ancDashboard.getChildren().add(pane);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override

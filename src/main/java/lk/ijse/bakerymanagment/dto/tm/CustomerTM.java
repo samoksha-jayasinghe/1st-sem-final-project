@@ -17,4 +17,12 @@ public class CustomerTM {
     private String email;
     private String contact;
     private String userID;
+
+    public CustomerTM(String customerId, String firstName, String lastName, String address, String email) {
+        this.customerId = customerId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.email = email;
+    }
 }

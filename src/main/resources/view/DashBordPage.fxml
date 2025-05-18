@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
@@ -14,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="1000.0" prefWidth="1600.0" style="-fx-background-color: #ffff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.bakerymanagment.controller.DashbordController">
+<AnchorPane fx:id="ancDashboard" prefHeight="1000.0" prefWidth="1600.0" style="-fx-background-color: #ffff;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.bakerymanagment.controller.DashbordController">
    <children>
       <Polyline fill="#7e9aae" layoutX="64.0" layoutY="105.0" points="-64.0, -105.0, 167.0, -105.0, -64.0, 299.0, -64.0, -105.0" strokeType="INSIDE" />
       <Polyline fill="#c3c3c3" layoutX="1234.0" layoutY="665.0" points="366.0, 335.0, 366.0, -135.0, 106.0, 335.0, 366.0, 335.0" strokeType="INSIDE" style="-fx-fill: #7e9aae;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" />
@@ -26,142 +27,246 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#d0d0d0" height="561.0" layoutX="60.0" layoutY="385.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: #7e9aae;" width="343.0" />
       <VBox layoutX="105.0" layoutY="398.0" prefHeight="536.0" prefWidth="135.0">
          <children>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#customerOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Customer" textFill="WHITE" />
-            <Button mnemonicParsing="false" onAction="#employeeOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Employee" textFill="#e8e8e8">
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#customerOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Customer" textFill="WHITE">
                <effect>
                   <Lighting>
                      <bumpInput>
                         <Shadow />
                      </bumpInput>
                      <light>
+                        <Light.Distant />
                      </light>
                   </Lighting>
                </effect>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#feedbackOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Feedback" textFill="#d0d0d0">
+            <Button mnemonicParsing="false" onAction="#employeeOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Employee" textFill="WHITE">
                <effect>
                   <Lighting>
                      <bumpInput>
                         <Shadow />
                      </bumpInput>
                      <light>
+                        <Light.Distant />
                      </light>
                   </Lighting>
                </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#ingredientOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Ingredient" textFill="#cdcdcd">
+            <Button mnemonicParsing="false" onAction="#feedbackOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Feedback" textFill="WHITE">
                <effect>
                   <Lighting>
                      <bumpInput>
                         <Shadow />
                      </bumpInput>
                      <light>
+                        <Light.Distant />
                      </light>
                   </Lighting>
                </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#inventoryOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Inventory" textFill="#bcbcbc">
+            <Button mnemonicParsing="false" onAction="#ingredientOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Ingredient" textFill="WHITE">
                <effect>
                   <Lighting>
                      <bumpInput>
                         <Shadow />
                      </bumpInput>
                      <light>
+                        <Light.Distant />
                      </light>
                   </Lighting>
                </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#invoiceOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Innvoice" textFill="#b2b2b2">
+            <Button mnemonicParsing="false" onAction="#inventoryOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Inventory" textFill="WHITE">
                <effect>
                   <Lighting>
                      <bumpInput>
                         <Shadow />
                      </bumpInput>
                      <light>
+                        <Light.Distant />
                      </light>
                   </Lighting>
                </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#itemOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Item" textFill="#8a8a8a">
+            <Button mnemonicParsing="false" onAction="#invoiceOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Innvoice" textFill="WHITE">
                <effect>
                   <Lighting>
                      <bumpInput>
                         <Shadow />
                      </bumpInput>
                      <light>
+                        <Light.Distant />
                      </light>
                   </Lighting>
                </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#orderdetailsOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="OrderDetails" textFill="#7c7c7c">
+            <Button mnemonicParsing="false" onAction="#itemOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Item" textFill="WHITE">
                <effect>
                   <Lighting>
                      <bumpInput>
                         <Shadow />
                      </bumpInput>
                      <light>
+                        <Light.Distant />
                      </light>
                   </Lighting>
                </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#orderOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Order" textFill="#797979">
+            <Button mnemonicParsing="false" onAction="#orderdetailsOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="OrderDetails" textFill="WHITE">
                <effect>
                   <Lighting>
                      <bumpInput>
                         <Shadow />
                      </bumpInput>
                      <light>
+                        <Light.Distant />
                      </light>
                   </Lighting>
                </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#paymentOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Payment" textFill="#5e5e5e">
+            <Button mnemonicParsing="false" onAction="#orderOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Order" textFill="WHITE">
                <effect>
                   <Lighting>
                      <bumpInput>
                         <Shadow />
                      </bumpInput>
                      <light>
+                        <Light.Distant />
                      </light>
                   </Lighting>
                </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#productOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Product" textFill="#575757">
+            <Button mnemonicParsing="false" onAction="#paymentOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Payment" textFill="WHITE">
                <effect>
                   <Lighting>
                      <bumpInput>
                         <Shadow />
                      </bumpInput>
                      <light>
+                        <Light.Distant />
                      </light>
                   </Lighting>
                </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#supplierOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Supplier" textFill="#404040">
+            <Button mnemonicParsing="false" onAction="#productOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Product" textFill="WHITE">
                <effect>
                   <Lighting>
                      <bumpInput>
                         <Shadow />
                      </bumpInput>
                      <light>
+                        <Light.Distant />
                      </light>
                   </Lighting>
                </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Button>
-            <Button mnemonicParsing="false" onAction="#userOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="User">
+            <Button mnemonicParsing="false" onAction="#supplierOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="Supplier" textFill="WHITE">
                <effect>
                   <Lighting>
                      <bumpInput>
                         <Shadow />
                      </bumpInput>
                      <light>
+                        <Light.Distant />
                      </light>
                   </Lighting>
                </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#userOnAction" prefHeight="42.0" prefWidth="132.0" style="-fx-background-color: #2980b9;" text="User" textFill="WHITE">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
             </Button>
          </children>
       </VBox>
-      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="345.0" layoutY="-9.0">
+      <ImageView fitHeight="200.0" fitWidth="200.0" layoutX="340.0" layoutY="-8.0">
          <image>
             <Image url="@../../../../../../../../../Users/Samoksha%20Jayasinghe/AppData/Local/Packages/5319275A.WhatsAppDesktop_cv1g1gvanyjgm/TempState/8282B546DDA9EC05515966BA0FE3E5D1/WhatsApp%20Image%202025-05-14%20at%2016.29.34_3b15542f.jpg" />
          </image>

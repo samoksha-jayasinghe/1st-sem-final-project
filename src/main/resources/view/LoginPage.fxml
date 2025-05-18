@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginPage">
+<AnchorPane fx:id="ancLogin" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.bakerymanagment.controller.LoginController">
    <children>
       <ImageView fitHeight="818.0" fitWidth="952.0">
          <image>
@@ -41,13 +41,13 @@
                   <Font size="16.0" />
                </font>
             </Text>
-            <TextField layoutX="203.0" layoutY="171.0" onAction="#nameOnAction" />
+            <TextField fx:id="txtUsername" layoutX="203.0" layoutY="171.0" onAction="#nameOnAction" />
             <Text layoutX="229.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="129.13671875">
                <font>
                   <Font size="16.0" />
                </font>
             </Text>
-            <TextField accessibleRole="PASSWORD_FIELD" layoutX="203.0" layoutY="229.0" onAction="#PasswordOnAction" />
+            <TextField fx:id="txtPassword" accessibleRole="PASSWORD_FIELD" layoutX="203.0" layoutY="229.0" onAction="#PasswordOnAction" />
             <Button layoutX="245.0" layoutY="283.0" mnemonicParsing="false" onAction="#LoginOnAction" prefHeight="25.0" prefWidth="63.0" text="Login" />
             <Text accessibleRole="BUTTON" fill="#ebd1d1" layoutX="222.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Forget Password" textAlignment="RIGHT" wrappingWidth="129.13671875" />
             <Button layoutX="246.0" layoutY="321.0" mnemonicParsing="false" onAction="#SignUpOnAction" prefHeight="25.0" prefWidth="63.0" text="Sign up" />

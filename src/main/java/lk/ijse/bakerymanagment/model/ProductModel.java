@@ -19,12 +19,12 @@ public class ProductModel {
         );
     }
     public boolean updateproduct(ProductDto productDto) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("UPDATE product SET name=?, stock_level=? , price=?, category=?  , WHERE product_id=?",
-                productDto.getProductId(),
+        return CrudUtil.execute("UPDATE product SET name=?, stock_level=? , price=?, category=? WHERE product_id=?",
                 productDto.getName(),
                 productDto.getStocklevel(),
                 productDto.getPrice(),
-                productDto.getCategory()
+                productDto.getCategory(),
+                productDto.getProductId()
         );
     }
     public boolean deleteproduct(String productId) throws ClassNotFoundException , SQLException {

@@ -17,14 +17,15 @@ public class OrderdetailsModel {
         );
     }
     public boolean updateOrderdetails(OrderdetailsDto orderdetailsDto) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("UPDATE order_details SET product_id=?, quantity=? , WHERE order_id=?",
-                orderdetailsDto.getOrderid(),
+        return CrudUtil.execute("UPDATE order_details SET product_id=?, quantity=?  WHERE order_id=?",
                 orderdetailsDto.getProductId(),
-                orderdetailsDto.getQty()
+                orderdetailsDto.getQty(),
+                orderdetailsDto.getOrderid()
+
         );
     }
     public boolean deleteOrderdetails(String OrderId) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("DELETE FROM order_details WHERE Oorder_id = ?",
+        return CrudUtil.execute("DELETE FROM order_details WHERE order_id = ?",
                 OrderId);
     }
     public OrderdetailsDto searchOrderdetails(String OrderId) throws ClassNotFoundException , SQLException {
@@ -55,7 +56,7 @@ public class OrderdetailsModel {
     }
     public String getNextOrderdetailsId() throws ClassNotFoundException , SQLException{
         ResultSet resultSet = CrudUtil.execute("SELECT order_id FROM order_details ORDER BY order_id DESC LIMIT 1");
-        char tableCharacter = 'B';
+        char tableCharacter = 'O';
 
         if(resultSet.next()){
             String lastId = resultSet.getString(1);

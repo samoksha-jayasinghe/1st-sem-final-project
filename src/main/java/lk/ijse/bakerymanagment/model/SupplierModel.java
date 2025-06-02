@@ -19,11 +19,11 @@ public class SupplierModel {
         );
     }
     public boolean updateSupplier(SupplierDto supplierDto) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("UPDATE supplier SET name=?, contact=? , address=?  , WHERE supplier_id=?",
-                supplierDto.getSupplierId(),
+        return CrudUtil.execute("UPDATE supplier SET name=?, contact=? , address=? WHERE supplier_id=?",
                 supplierDto.getName(),
                 supplierDto.getContact(),
-                supplierDto.getAddress()
+                supplierDto.getAddress(),
+                supplierDto.getSupplierId()
         );
     }
     public boolean deleteSupplier(String SupplierId) throws ClassNotFoundException , SQLException {

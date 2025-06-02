@@ -20,12 +20,12 @@ public class InventoryModel {
         );
     }
     public boolean updateInventory(InventoryDto inventoryDto) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("UPDATE inventory SET product_id=?, supplier_id=? , raw_material=?, quantity=?  , WHERE inventory_id=?",
-                inventoryDto.getInventoryId(),
+        return CrudUtil.execute("UPDATE inventory SET product_id=?, supplier_id=? , raw_material=?, quantity=? WHERE inventory_id=?",
                 inventoryDto.getProductId(),
                 inventoryDto.getSupplierId(),
                 inventoryDto.getRawMaterial(),
-                inventoryDto.getQty()
+                inventoryDto.getQty(),
+                inventoryDto.getInventoryId()
         );
     }
     public boolean deleteInventory(String InventoryId) throws ClassNotFoundException , SQLException {

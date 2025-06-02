@@ -1,0 +1,14 @@
+.combo-box {
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 24px;
+    -fx-font-style: italic;
+    -fx-font-weight: bold;
+    -fx-background-color: #D4B5AD;
+}
+
+.combo-box .list-cell {
+    -fx-font-family: "Comic Sans MS";
+    -fx-font-size: 24px;
+    -fx-font-style: italic;
+    -fx-font-weight: bold;
+}

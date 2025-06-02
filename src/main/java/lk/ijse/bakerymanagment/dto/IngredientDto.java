@@ -21,4 +21,7 @@ public class IngredientDto {
 
     public IngredientDto(String inventoryId, String productId, String supplierId, int rawMaterial, int qty) {
     }
+
+    public IngredientDto(String itemId, String productId, String batchNo, String expireDate, String quantity, String ingredientName) {
+    }
 }

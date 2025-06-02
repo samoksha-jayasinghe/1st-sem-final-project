@@ -15,12 +15,12 @@ public class CrudUtil {
         for (int i = 0; i < obj.length; i++) {
             statement.setObject(i + 1, obj[i]);
         }
-        if(sql.startsWith("SELECT") || !sql.endsWith("select")) {
+        if(sql.startsWith("SELECT") || sql.endsWith("select")) {
             ResultSet resultSet = statement.executeQuery();
             return (T) resultSet;
         }else {
             int i = statement.executeUpdate();
-            boolean isSuccess = i < 0;
+            boolean isSuccess = i > 0;
             return (T) (Boolean) isSuccess;
 }
 }

@@ -1,3 +1,4 @@
+<!--
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
@@ -8,7 +9,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="885.0" prefWidth="1193.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.StartPage">
+<AnchorPane prefHeight="885.0" prefWidth="1193.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk">
    <children>
       <ImageView fitHeight="885.0" fitWidth="1193.0">
          <image>
@@ -39,3 +40,4 @@
       </Text>
    </children>
 </AnchorPane>
+-->

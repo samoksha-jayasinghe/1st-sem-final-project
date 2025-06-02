@@ -10,8 +10,8 @@ public class DBConnection {
     private Connection connection;
 
     private DBConnection() throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/Supermarket", "root", "root");
+        //Class.forName("com.mysql.cj.jdbc.Driver");
+        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bakery_management_system", "root", "root");
     }
 
     public static DBConnection getInstance()  throws ClassNotFoundException, SQLException{
@@ -25,3 +25,4 @@ public class DBConnection {
         return connection;
     }
 }
+

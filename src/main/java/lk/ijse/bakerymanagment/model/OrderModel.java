@@ -39,7 +39,7 @@ public class OrderModel {
                     resultSet.getString("OrderId"),
                     resultSet.getString("CustomerId"),
                     resultSet.getString("Orderdate"),
-                    resultSet.getInt("Status"),
+                    resultSet.getString("Status"),
                     resultSet.getInt("TotalAmount")
             );
             return dto;
@@ -54,7 +54,7 @@ public class OrderModel {
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getString(3),
-                    resultSet.getInt(4),
+                    resultSet.getString(4),
                     resultSet.getInt(5)
             );
             orderDtoArrayList.add(dto);

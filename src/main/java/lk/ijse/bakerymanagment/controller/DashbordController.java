@@ -1,10 +1,14 @@
 package lk.ijse.bakerymanagment.controller;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
@@ -13,233 +17,98 @@ import java.util.ResourceBundle;
 
 public class DashbordController implements Initializable {
     @FXML
-    public AnchorPane AncDashbord;
-    public AnchorPane ancDashboard;
-
-    public void customerOnAction(ActionEvent actionEvent) {
-        try {
-            ancDashboard.getChildren().clear();
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/CustomerPage.fxml"));
-            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
-            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
-            ancDashboard.getChildren().add(pane);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void employeeOnAction(ActionEvent actionEvent) {
-        try {
-            ancDashboard.getChildren().clear();
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/EmployeeAttendnce.fxml"));
-            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
-            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
-            ancDashboard.getChildren().add(pane);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void feedbackOnAction(ActionEvent actionEvent) {
-        try {
-            ancDashboard.getChildren().clear();
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/FeedbackPage.fxml"));
-            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
-            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
-            ancDashboard.getChildren().add(pane);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void ingredientOnAction(ActionEvent actionEvent) {
-        try {
-            ancDashboard.getChildren().clear();
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/IngredientPage.fxml"));
-            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
-            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
-            ancDashboard.getChildren().add(pane);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void inventoryOnAction(ActionEvent actionEvent) {
-        try {
-            ancDashboard.getChildren().clear();
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/InventoryPage.fxml"));
-            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
-            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
-            ancDashboard.getChildren().add(pane);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void invoiceOnAction(ActionEvent actionEvent) {
-        try {
-            ancDashboard.getChildren().clear();
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/CustomerPage.fxml"));
-            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
-            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
-            ancDashboard.getChildren().add(pane);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void itemOnAction(ActionEvent actionEvent) {
-        try {
-            ancDashboard.getChildren().clear();
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/Itempage.fxml"));
-            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
-            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
-            ancDashboard.getChildren().add(pane);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void orderdetailsOnAction(ActionEvent actionEvent) {
-        try {
-            ancDashboard.getChildren().clear();
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/OrderDetailsPage.fxml"));
-            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
-            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
-            ancDashboard.getChildren().add(pane);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void orderOnAction(ActionEvent actionEvent) {
-        try {
-            ancDashboard.getChildren().clear();
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/OrderPage.fxml"));
-            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
-            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
-            ancDashboard.getChildren().add(pane);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void paymentOnAction(ActionEvent actionEvent) {
-        try {
-            ancDashboard.getChildren().clear();
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/PaymentPage.fxml"));
-            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
-            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
-            ancDashboard.getChildren().add(pane);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void productOnAction(ActionEvent actionEvent) {
-        try {
-            ancDashboard.getChildren().clear();
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/ProductPage.fxml"));
-            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
-            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
-            ancDashboard.getChildren().add(pane);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void supplierOnAction(ActionEvent actionEvent) {
-        try {
-            ancDashboard.getChildren().clear();
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/SupplierPage.fxml"));
-            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
-            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
-            ancDashboard.getChildren().add(pane);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public void userOnAction(ActionEvent actionEvent) {
-        try {
-            ancDashboard.getChildren().clear();
-            AnchorPane pane = FXMLLoader.load(getClass().getResource("/view/UserPage.fxml"));
-            pane.prefWidthProperty().bind(ancDashboard.widthProperty());
-            pane.prefHeightProperty().bind(ancDashboard.heightProperty());
-            ancDashboard.getChildren().add(pane);
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-    }
+    public AnchorPane ancDashbordloadPage;
+    public ComboBox cmbOverView;
+    public Button btnOverView;
+    public AnchorPane ancOverView;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        try {
+            loadPageNames();
+        } catch (Exception e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Page not found..!").show();
+        }
     }
-    public void btnGocustomerOnAction(ActionEvent actionEvent) {
-        navigateTo("/view/CustomerPage.fxml");
-    }
+    public void navigateTo2(String path){
+        try {
+            ancOverView.getChildren().clear();
 
-    public void btnGoitemOnAction(ActionEvent actionEvent) {
-        navigateTo("/view/ItemPage.fxml");
-    }
+            AnchorPane anchorPane = FXMLLoader.load(getClass().getResource(path));
 
-    public void btnGoorderOnAction(ActionEvent actionEvent) {
-        navigateTo("/view/OrderPage.fxml");
-    }
+            anchorPane.prefWidthProperty().bind(ancDashbordloadPage.widthProperty());
+            anchorPane.prefHeightProperty().bind(ancDashbordloadPage.heightProperty());
 
-    public void btnGoemployeeOnAction(ActionEvent actionEvent) {
-        navigateTo("/view/EmplyeePage.fxml");
-    }
-
-    public void btnGofeedbackOnAction(ActionEvent actionEvent) {
-        navigateTo("/view/FeedbackPage.fxml");
-    }
-
-    public void btnGoingredientOnAction(ActionEvent actionEvent) {
-        navigateTo("/view/IngredientPage.fxml");
-    }
-
-    public void btnGoinventoryOnAction(ActionEvent actionEvent) {
-        navigateTo("/view/InventoryPage.fxml");
-    }
-
-    public void btnGoinvoiceOnAction(ActionEvent actionEvent) {
-        navigateTo("/view/InvoicePage.fxml");
-    }
-
-    public void btnGoorderdetailsOnAction(ActionEvent actionEvent) { navigateTo("/view/OrderDetailsPage.fxml");
-    }
-
-    public void btnGopaymentOnAction(ActionEvent actionEvent) {
-        navigateTo("/view/PaymentPage.fxml");
-    }
-
-    public void btnGoproductOnAction(ActionEvent actionEvent) {
-        navigateTo("/view/ProductPage.fxml");
-    }
-
-    public void btnGosupplierOnAction(ActionEvent actionEvent) {
-        navigateTo("/view/SupplierPage.fxml");
-    }
-
-    public void btnGouserOnAction(ActionEvent actionEvent) {
-        navigateTo("/view/UserPage.fxml");
+            ancOverView.getChildren().setAll(anchorPane);
+        }catch (Exception e){
+            new Alert(Alert.AlertType.ERROR, "Page not found..!").show();
+            e.printStackTrace();
+        }
     }
 
     private void navigateTo(String path) {
         try {
-            AncDashbord.getChildren().clear();
+            ancDashbordloadPage.getChildren().clear();
 
             AnchorPane anchorPane = FXMLLoader.load(getClass().getResource(path));
 
-            anchorPane.prefWidthProperty().bind(AncDashbord.widthProperty());
-            anchorPane.prefHeightProperty().bind(AncDashbord.heightProperty());
+            anchorPane.prefWidthProperty().bind(ancDashbordloadPage.widthProperty());
+            anchorPane.prefHeightProperty().bind(ancDashbordloadPage.heightProperty());
 
-            AncDashbord.getChildren().add(anchorPane);
+            ancDashbordloadPage.getChildren().add(anchorPane);
         } catch (Exception e) {
             new Alert(Alert.AlertType.ERROR, "Page not found..!").show();
             e.printStackTrace();
         }
     }
+
+
+
+
+    private void loadPageNames(){
+        try {
+            cmbOverView.setItems(FXCollections.observableArrayList("Customer Page","Employee Page","Feedback Page","Ingredients Page", "Inventory Page", "Invoice Page", "Item Page", "Order Page", "Orderdetails Page", "Payment Page", "Product Page", "Supplier Page", "User Page"));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void cmbOverViewPagesOnAction(ActionEvent actionEvent) {
+        try {
+
+        String selectedPage = (String) cmbOverView.getSelectionModel().getSelectedItem();
+        if (selectedPage != null) {
+            switch (selectedPage) {
+                case "Customer Page" -> navigateTo("/view/CustomerPage.fxml");
+                case "Employee Page" -> navigateTo("/view/EmployeeAttendnce.fxml");
+                case "Feedback Page" -> navigateTo("/view/FeedbackPage.fxml");
+                case "Ingredients Page" -> navigateTo("/view/IngredientPage.fxml");
+                case "Inventory Page" -> navigateTo("/view/InventoryPage.fxml");
+                case "Invoice Page" -> navigateTo("/view/InvoicePage .fxml");
+                case "Item Page" -> navigateTo("/view/Itempage.fxml");
+                case "Order Page" -> navigateTo("/view/OrderPage.fxml");
+                case "Orderdetails Page" -> navigateTo("/view/OrderDetailsPage.fxml");
+                case "Payment Page" -> navigateTo("/view/PaymentPage.fxml");
+                case "Product Page" -> navigateTo("/view/ProductPage.fxml");
+                case "Supplier Page" -> navigateTo("/view/SupplierPage.fxml");
+                case "Users Page" -> navigateTo("/view/UserPage.fxml");
+
+            }
+        }
+        }catch (Exception e){
+        e.printStackTrace();
+        new Alert(Alert.AlertType.ERROR, "Page not found..!").show();
+        }
+    }
+
+    public void btnOverViewOnAction(ActionEvent actionEvent) {
+        navigateTo("/view/ButtonSet.fxml");
+    }
+
 }
+
+
+
+
+

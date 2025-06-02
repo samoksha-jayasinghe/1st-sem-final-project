@@ -9,22 +9,24 @@ import java.util.ArrayList;
 
 public class UserModel {
     public boolean saveUser(UsersDto usersDto) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("INSERT INTO users VALUES (?,?,?,?,?)",
+        return CrudUtil.execute("INSERT INTO users VALUES (?,?,?,?,?,?)",
                 usersDto.getUserId(),
                 usersDto.getName(),
                 usersDto.getAddress(),
                 usersDto.getEmail(),
-                usersDto.getContact()
+                usersDto.getContact(),
+                usersDto.getPassword()
 
         );
     }
     public boolean updateUser(UsersDto usersDto) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("UPDATE users SET name=?, address=? , email=?, contact=?  , WHERE user_id=?",
-                usersDto.getUserId(),
+        return CrudUtil.execute("UPDATE users SET name=?, address=? , email=?, contact=?, password=?  WHERE user_id=?",
                 usersDto.getName(),
                 usersDto.getAddress(),
                 usersDto.getEmail(),
-                usersDto.getContact()
+                usersDto.getContact(),
+                usersDto.getPassword(),
+                usersDto.getUserId()
         );
     }
     public boolean deleteUser(String UserId) throws ClassNotFoundException , SQLException {
@@ -40,7 +42,8 @@ public class UserModel {
                     resultSet.getString("Name"),
                     resultSet.getString("Address"),
                     resultSet.getString("Email"),
-                    resultSet.getInt("Contact")
+                    resultSet.getString("Contact"),
+                    resultSet.getInt("Password")
             );
             return dto;
         }
@@ -55,7 +58,8 @@ public class UserModel {
                     resultSet.getString(2),
                     resultSet.getString(3),
                     resultSet.getString(4),
-                    resultSet.getInt(5)
+                    resultSet.getString(5),
+                    resultSet.getInt(6)
             );
             usersDtoArrayList.add(dto);
         }
@@ -63,7 +67,7 @@ public class UserModel {
     }
     public String getNextUserId() throws ClassNotFoundException , SQLException{
         ResultSet resultSet = CrudUtil.execute("SELECT user_id FROM users ORDER BY user_id DESC LIMIT 1");
-        char tableCharacter = 'A';
+        char tableCharacter = 'U';
 
         if(resultSet.next()){
             String lastId = resultSet.getString(1);

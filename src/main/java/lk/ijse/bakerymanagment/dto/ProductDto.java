@@ -15,6 +15,6 @@ public class ProductDto {
     private String productId;
     private String name;
     private int stocklevel;
-    private double price;
+    private int price;
     private String category;
 }

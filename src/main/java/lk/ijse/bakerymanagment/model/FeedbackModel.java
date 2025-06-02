@@ -11,30 +11,40 @@ import java.util.ArrayList;
 import static lk.ijse.bakerymanagment.dto.CustomerDto.*;
 
 public class FeedbackModel {
-    public boolean saveFeedback(FeedbackDto feedbackDto) throws ClassNotFoundException , SQLException {
+   /* public boolean saveFeedback(FeedbackDto feedbackDto) throws ClassNotFoundException , SQLException {
         return CrudUtil.execute("INSERT INTO feedback VALUES (?,?,?,?,?)",
                 feedbackDto.getFeedbackId(),
                 feedbackDto.getCustomerId(),
                 feedbackDto.getOrderId(),
                 feedbackDto.getRating(),
                 feedbackDto.getComment()
+        );*/
 
-        );
-    }
-    public boolean updateFeedback(FeedbackDto feedbackDto) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("UPDATE feedback SET feedback_id=?, customer_id=? , order_id=? , rating=?, comment=?  , WHERE feedback_id=?",
+    public boolean saveFeedback(FeedbackDto feedbackDto) throws ClassNotFoundException , SQLException {
+        return CrudUtil.execute("INSERT INTO feedback (id, customerId, comment, date) VALUES (?, ?, ?, ?)",
                 feedbackDto.getFeedbackId(),
                 feedbackDto.getCustomerId(),
                 feedbackDto.getOrderId(),
                 feedbackDto.getRating(),
                 feedbackDto.getComment()
+                );
+    }
+
+    public boolean updateFeedback(FeedbackDto feedbackDto) throws ClassNotFoundException , SQLException {
+        return CrudUtil.execute("UPDATE feedback SET  customer_id=? , order_id=? , rating=?, comment=? WHERE feedback_id=?",
+                feedbackDto.getCustomerId(),
+                feedbackDto.getOrderId(),
+                feedbackDto.getRating(),
+                feedbackDto.getComment(),
+                feedbackDto.getFeedbackId()
+
         );
     }
     public boolean deleteFeedback(String FeedbackId) throws ClassNotFoundException , SQLException {
         return CrudUtil.execute("DELETE FROM feedback WHERE feedback_id = ?",
                 FeedbackId);
     }
-    public FeedbackDto searchFeedback(String FeedbackId) throws ClassNotFoundException , SQLException {
+    /*public FeedbackDto searchFeedback(String FeedbackId) throws ClassNotFoundException , SQLException {
         ResultSet resultSet = CrudUtil.execute("SELECT * FROM feedback WHERE feedback_id = ? ",
                 FeedbackId);
         if (resultSet.next()) {
@@ -48,7 +58,7 @@ public class FeedbackModel {
             return dto;
         }
         return null;
-    }
+    }*/
     public ArrayList<FeedbackDto> getAllFeedback() throws ClassNotFoundException , SQLException {
         ResultSet resultSet = CrudUtil.execute("SELECT * FROM feedback");
         ArrayList<FeedbackDto> feedbackDtoArrayList = new ArrayList<>();

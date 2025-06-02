@@ -1,6 +1,5 @@
 package lk.ijse.bakerymanagment.model;
 
-import lk.ijse.bakerymanagment.dto.FeedbackDto;
 import lk.ijse.bakerymanagment.dto.IngredientDto;
 import lk.ijse.bakerymanagment.util.CrudUtil;
 
@@ -9,19 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class IngredientModel {
-    public boolean saveIngredient(IngredientDto ingredientDto) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("INSERT INTO ingredient VALUES (?,?,?,?,?,?)",
-                ingredientDto.getItemId(),
-                ingredientDto.getProductId(),
-                ingredientDto.getBatchno(),
-                ingredientDto.getDate(),
-                ingredientDto.getQty(),
-                ingredientDto.getIngredientName()
 
-        );
-    }
-    public boolean updateIngredient(IngredientDto ingredientDto) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("UPDATE ingredient SET product_id=?, batch_no=? , expiry_date=?, quantity=?, ingredient_name=?  , WHERE item_id=?",
+    public boolean saveIngredient(IngredientDto ingredientDto) throws ClassNotFoundException, SQLException {
+        return CrudUtil.execute("INSERT INTO ingredient VALUES (?, ?, ?, ?, ?, ?)",
                 ingredientDto.getItemId(),
                 ingredientDto.getProductId(),
                 ingredientDto.getBatchno(),
@@ -30,55 +19,67 @@ public class IngredientModel {
                 ingredientDto.getIngredientName()
         );
     }
-    public boolean deleteIngredient(String IngredientId) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("DELETE FROM ingredient WHERE ingredient_id = ?",
-                IngredientId);
+
+    public boolean updateIngredient(IngredientDto ingredientDto) throws ClassNotFoundException, SQLException {
+        return CrudUtil.execute("UPDATE ingredient SET product_id = ?, batch_no = ?, expiry_date = ?, quantity = ?, ingredient_name = ? WHERE item_id = ?",
+                ingredientDto.getProductId(),
+                ingredientDto.getBatchno(),
+                ingredientDto.getDate(),
+                ingredientDto.getQty(),
+                ingredientDto.getIngredientName(),
+                ingredientDto.getItemId()
+        );
     }
-    public IngredientDto searchIngredient(String IngredientId) throws ClassNotFoundException , SQLException {
-        ResultSet resultSet = CrudUtil.execute("SELECT * FROM ingredient WHERE ingredient_id = ? ",
-                IngredientId);
+
+    public boolean deleteIngredient(String ingredientId) throws ClassNotFoundException, SQLException {
+        return CrudUtil.execute("DELETE FROM ingredient WHERE item_id = ?", ingredientId);
+    }
+
+    public IngredientDto searchIngredient(String ingredientId) throws ClassNotFoundException, SQLException {
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM ingredient WHERE item_id = ?", ingredientId);
+
         if (resultSet.next()) {
-            IngredientDto dto = new IngredientDto(
-                    resultSet.getString("ItemId"),
-                    resultSet.getString("ProductId"),
-                    resultSet.getString("Batchno"),
-                    resultSet.getString("Date"),
-                    resultSet.getInt("qty"),
-                    resultSet.getString("IngredientName")
+            return new IngredientDto(
+                    resultSet.getString("item_id"),
+                    resultSet.getString("product_id"),
+                    resultSet.getString("batch_no"),
+                    resultSet.getString("expiry_date"),
+                    resultSet.getInt("quantity"),
+                    resultSet.getString("ingredient_name")
             );
-            return dto;
         }
         return null;
     }
-    public ArrayList<IngredientDto> getAllIngredient() throws ClassNotFoundException , SQLException {
+
+    public ArrayList<IngredientDto> getAllIngredient() throws ClassNotFoundException, SQLException {
         ResultSet resultSet = CrudUtil.execute("SELECT * FROM ingredient");
-        ArrayList<IngredientDto> ingredientDtoArrayList = new ArrayList<>();
+        ArrayList<IngredientDto> ingredientDtoList = new ArrayList<>();
+
         while (resultSet.next()) {
             IngredientDto dto = new IngredientDto(
-                    resultSet.getString(1),
-                    resultSet.getString(2),
-                    resultSet.getString(3),
-                    resultSet.getString(4),
-                    resultSet.getInt(5),
-                    resultSet.getString(6)
+                    resultSet.getString("item_id"),
+                    resultSet.getString("product_id"),
+                    resultSet.getString("batch_no"),
+                    resultSet.getString("expiry_date"),
+                    resultSet.getInt("quantity"),
+                    resultSet.getString("ingredient_name")
             );
-            ingredientDtoArrayList.add(dto);
+            ingredientDtoList.add(dto);
         }
-        return ingredientDtoArrayList;
+
+        return ingredientDtoList;
     }
-    public String getNextFeedbackId() throws ClassNotFoundException , SQLException{
+
+    public String getNextingredientId() throws ClassNotFoundException, SQLException {
         ResultSet resultSet = CrudUtil.execute("SELECT item_id FROM ingredient ORDER BY item_id DESC LIMIT 1");
-        char tableCharacter = 'I';
+        char prefix = 'I';
 
-        if(resultSet.next()){
-            String lastId = resultSet.getString(1);
-            String lastIdNumberString = lastId.substring(1);
-            int lastIdNumber = Integer.parseInt(lastIdNumberString);
-            int nextIdNumber = lastIdNumber + 1;
-            String nextIdString = String.format(tableCharacter + "%03d" , nextIdNumber);
-            return nextIdString;
+        if (resultSet.next()) {
+            String lastId = resultSet.getString(1); // e.g., I001
+            int idNum = Integer.parseInt(lastId.substring(1));
+            return String.format(prefix + "%03d", idNum + 1); // e.g., I002
         }
-        return tableCharacter +"001";
-    }
 
+        return prefix + "001";
+    }
 }

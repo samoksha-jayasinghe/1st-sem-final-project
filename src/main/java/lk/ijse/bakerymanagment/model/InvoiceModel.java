@@ -21,11 +21,11 @@ public class InvoiceModel {
         );
     }
     public boolean updateInvoice(InvoiceDto invoiceDto) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("UPDATE invoice SET order_id=?, data_issued=? , total_ammount=?, WHERE invoice_id=?",
-                invoiceDto.getInvoiceid(),
+        return CrudUtil.execute("UPDATE invoice SET order_id=?, date_issued=? , total_amount=? WHERE invoice_id=?",
                 invoiceDto.getOrderid(),
                 invoiceDto.getDataIssue(),
-                invoiceDto.getTotalAmount()
+                invoiceDto.getTotalAmount(),
+                invoiceDto.getInvoiceid()
         );
     }
     public boolean deleteInvoice(String InvoiceId) throws ClassNotFoundException , SQLException {
@@ -40,7 +40,7 @@ public class InvoiceModel {
                     resultSet.getString("InvoiceId"),
                     resultSet.getString("OrderId"),
                     resultSet.getString("DataIssue"),
-                    resultSet.getDouble("TotalAmount")
+                    resultSet.getInt("TotalAmount")
             );
             return dto;
         }
@@ -54,7 +54,7 @@ public class InvoiceModel {
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getString(3),
-                    resultSet.getDouble(4)
+                    resultSet.getInt(4)
             );
             invoiceDtoArrayList.add(dto);
         }

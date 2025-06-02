@@ -19,12 +19,12 @@ public class PaymentModel {
         );
     }
     public boolean updatePayment(PaymentDto paymentDto) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("UPDATE payment SET order_id=?, method=? , payment_date=?, amount=?  , WHERE payment_id=?",
-                paymentDto.getPaymentId(),
+        return CrudUtil.execute("UPDATE payment SET order_id=?, method=? , payment_date=?, amount=? WHERE payment_id=?",
                 paymentDto.getOrderId(),
                 paymentDto.getMethod(),
                 paymentDto.getPaymentDate(),
-                paymentDto.getAmount()
+                paymentDto.getAmount(),
+                paymentDto.getPaymentId()
         );
     }
     public boolean deletePayment(String PaymentId) throws ClassNotFoundException , SQLException {
@@ -61,13 +61,13 @@ public class PaymentModel {
         }
         return paymentDtoArrayList;
     }
-    public String getNextOrderId() throws ClassNotFoundException , SQLException{
+    public String getNextPaymentId() throws ClassNotFoundException , SQLException{
         ResultSet resultSet = CrudUtil.execute("SELECT payment_id FROM payment ORDER BY payment_id DESC LIMIT 1");
-        char tableCharacter = 'P';
+        String tableCharacter = "PM";
 
         if(resultSet.next()){
             String lastId = resultSet.getString(1);
-            String lastIdNumberString = lastId.substring(1);
+            String lastIdNumberString = lastId.substring(tableCharacter.length());
             int lastIdNumber = Integer.parseInt(lastIdNumberString);
             int nextIdNumber = lastIdNumber + 1;
             String nextIdString = String.format(tableCharacter + "%03d" , nextIdNumber);

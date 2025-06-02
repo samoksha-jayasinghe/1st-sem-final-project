@@ -16,5 +16,5 @@ public class InvoiceDto {
     private String invoiceid;
     private String orderid;
     private String dataIssue;
-    private double totalAmount;
+    private int totalAmount;
 }

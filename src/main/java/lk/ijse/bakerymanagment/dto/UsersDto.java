@@ -16,5 +16,7 @@ public class UsersDto {
     private String name;
     private String address;
     private String email;
-    private double contact;
+    private String contact;
+    private int password;
+
 }

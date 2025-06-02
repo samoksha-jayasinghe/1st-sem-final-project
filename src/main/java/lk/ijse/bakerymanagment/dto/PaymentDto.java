@@ -16,5 +16,5 @@ public class PaymentDto {
     private String orderId;
     private String method;
     private String paymentDate;
-    private double amount;
+    private int amount;
 }

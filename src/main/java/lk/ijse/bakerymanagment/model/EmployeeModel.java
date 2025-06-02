@@ -20,11 +20,12 @@ public class EmployeeModel {
         );
     }
     public boolean updateEmployee(EmployeeDto employeeDto) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("UPDATE employee SET name=?, role=?, salary=? , contact=?, WHERE employee_id=?",
+        return CrudUtil.execute("UPDATE employee SET name=?, role=?, salary=? , contact=?  WHERE employee_id=?",
                 employeeDto.getName(),
                 employeeDto.getRole(),
                 employeeDto.getSalary(),
-                employeeDto.getContact()
+                employeeDto.getContact(),
+                employeeDto.getEmployeeId()
         );
     }
     public boolean deleteEmployee(String EmployeeId) throws ClassNotFoundException , SQLException {
@@ -51,11 +52,11 @@ public class EmployeeModel {
         ArrayList<EmployeeDto> employeeDtosArrayList = new ArrayList<>();
         while (resultSet.next()) {
             EmployeeDto dto = new EmployeeDto(
-                    resultSet.getString(1),
-                    resultSet.getString(2),
-                    resultSet.getString(3),
-                    resultSet.getString(4),
-                    resultSet.getString(5)
+                    resultSet.getString("employee_id"),
+                    resultSet.getString("Name"),
+                    resultSet.getString("Role"),
+                    resultSet.getString("Salary"),
+                    resultSet.getString("contact")
             );
             employeeDtosArrayList.add(dto);
         }
@@ -74,6 +75,22 @@ public class EmployeeModel {
             return nextIdString;
         }
         return tableCharacter +"001";
+    }
+
+    public EmployeeDto getEmployeeById(String empId) throws SQLException, ClassNotFoundException {
+        ResultSet resultSet = CrudUtil.execute("SELECT * FROM employee WHERE employee_id = ?", empId);
+
+        if (resultSet.next()) {
+            return new EmployeeDto(
+                    resultSet.getString("employee_id"),
+                    resultSet.getString("name"),
+                    resultSet.getString("role"),
+                    resultSet.getString("salary"),
+                    resultSet.getString("contact")
+            );
+        }
+
+        return null; // If employee is not found
     }
 
 }

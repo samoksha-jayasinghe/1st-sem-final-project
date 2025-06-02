@@ -15,7 +15,10 @@ public class ItemDto {
     private String itemId;
     private String name;
     private String category;
-    private double price;
+    private int price;
     private int quantity;
     private String expirDate;
+
+    public ItemDto(String string, String string1, int anInt, int anInt1, String string2) {
+    }
 }

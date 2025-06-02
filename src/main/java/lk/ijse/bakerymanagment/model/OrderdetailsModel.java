@@ -69,4 +69,25 @@ public class OrderdetailsModel {
         return tableCharacter +"001";
     }
 
+    public boolean addOrderDetails(OrderdetailsDto orderdetailsDto) throws SQLException, ClassNotFoundException {
+        boolean isInserted = false;
+
+        // Generate a new orderDetail ID for each record
+        String newId = getNextOrderdetailsId();
+        orderdetailsDto.setOrderid(newId);
+
+        isInserted = saveOrderdetails(orderdetailsDto);
+        if (!isInserted) {
+            return false;
+        }
+
+        System.out.println(orderdetailsDto.getQty());
+
+        boolean isProductUpdated = ProductModel.reduceQty(orderdetailsDto.getQty(), orderdetailsDto.getProductId());
+        if (!isProductUpdated) {
+            return false;
+        }
+        return true;
+    }
+
 }

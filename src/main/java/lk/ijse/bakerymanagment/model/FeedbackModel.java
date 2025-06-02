@@ -27,7 +27,7 @@ public class FeedbackModel {
                 feedbackDto.getOrderId(),
                 feedbackDto.getRating(),
                 feedbackDto.getComment()
-                );
+        );
     }
 
     public boolean updateFeedback(FeedbackDto feedbackDto) throws ClassNotFoundException , SQLException {

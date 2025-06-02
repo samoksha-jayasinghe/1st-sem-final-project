@@ -18,4 +18,5 @@ public class ProductTM {
     private int stocklevel;
     private int price;
     private String category;
+    private int qty;
 }

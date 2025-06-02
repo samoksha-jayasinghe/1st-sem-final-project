@@ -1,15 +1,13 @@
 package lk.ijse.bakerymanagment.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-/*@Getter
+@Getter
 @Setter
-@ToString*/
-@Data
+@ToString
+
 
 public class ItemDto {
     private String itemId;
@@ -19,6 +17,5 @@ public class ItemDto {
     private int quantity;
     private String expirDate;
 
-    public ItemDto(String string, String string1, int anInt, int anInt1, String string2) {
-    }
+
 }

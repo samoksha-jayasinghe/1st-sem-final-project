@@ -25,6 +25,15 @@ public class LoginPageController {
     }
 
     public void goToSignUpPage(MouseEvent mouseEvent) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource("/view/SignUpPage.fxml"));
+            Stage stage = (Stage) ancSignin.getScene().getWindow();
+            stage.setScene(new Scene(parent));
+            stage.setTitle("Sign Up");
+        } catch (IOException e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Unable to open the Sign-Up page.").show();
+        }
     }
 
 

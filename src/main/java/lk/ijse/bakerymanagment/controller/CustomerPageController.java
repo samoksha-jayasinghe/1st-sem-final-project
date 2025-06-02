@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
@@ -16,6 +17,7 @@ import lk.ijse.bakerymanagment.model.CustomerModel;
 
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Optional;
 import java.util.ResourceBundle;
 
@@ -238,9 +240,35 @@ public class CustomerPageController implements Initializable {
 
         }
     }
-   /* public void search(){
-        //String searchText = txtSea.getText();
-    }*/
+    public void search(KeyEvent keyEvent) {
+        String search = txtSearch.getText();
+        if (search.isEmpty()) {
+            try {
+                loadTableData();
+            } catch (Exception e) {
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR, "Failed to search").show();
+            }
+        }else {
+            try {
+                ArrayList<CustomerDto> customerList = customerModel.searchCustomer(search);
+                tblCustomer.setItems(FXCollections.observableArrayList(
+                        customerList.stream()
+                                .map(customerDto -> new CustomerTM(
+                                        customerDto.getCustomerId(),
+                                        customerDto.getFirstName(),
+                                        customerDto.getAddress(),
+                                        customerDto.getEmail(),
+                                        customerDto.getContact(),
+                                        customerDto.getUserID()
+                                )).toList()
+                ));
+            } catch (Exception e) {
+                e.printStackTrace();
+                new Alert(Alert.AlertType.ERROR, "Failed to search").show();
+            }
+        }
+    }
 
 
 }

@@ -4,10 +4,10 @@ import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-/*@Getter
+@Getter
 @Setter
-@ToString*/
-@Data
+@ToString
+
 
 public class IngredientTM {
     private String itemId;
@@ -17,7 +17,4 @@ public class IngredientTM {
     private int qty;
     private String ingredientName;
 
-
-    public IngredientTM(String itemId, String productId, String batchno, String date, int qty) {
-    }
 }

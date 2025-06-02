@@ -62,11 +62,11 @@ public class InvoiceModel {
     }
     public String getNextInvoiceId() throws ClassNotFoundException , SQLException{
         ResultSet resultSet = CrudUtil.execute("SELECT invoice_id FROM invoice ORDER BY invoice_id DESC LIMIT 1");
-        char tableCharacter = 'V';
+        String tableCharacter = "INV";
 
         if(resultSet.next()){
             String lastId = resultSet.getString(1);
-            String lastIdNumberString = lastId.substring(1);
+            String lastIdNumberString = lastId.substring(tableCharacter.length());
             int lastIdNumber = Integer.parseInt(lastIdNumberString);
             int nextIdNumber = lastIdNumber + 1;
             String nextIdString = String.format(tableCharacter + "%03d" , nextIdNumber);

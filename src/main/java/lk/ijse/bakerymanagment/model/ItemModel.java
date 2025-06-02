@@ -66,13 +66,14 @@ public class ItemModel {
         return itemDtoArrayList;
     }*/
 
-    public static ArrayList<ItemDto> getAllItem() throws ClassNotFoundException , SQLException {
+    public  ArrayList<ItemDto> getAllItem() throws ClassNotFoundException , SQLException {
         ResultSet resultSet = CrudUtil.execute("SELECT * FROM item");
         ArrayList<ItemDto> items = new ArrayList<>();
         while (resultSet.next()) {
             ItemDto itemDto = new ItemDto(
                     resultSet.getString(1),
                     resultSet.getString(2),
+                    resultSet.getString(3),
                     resultSet.getInt(4),
                     resultSet.getInt(5),
                     resultSet.getString(6)

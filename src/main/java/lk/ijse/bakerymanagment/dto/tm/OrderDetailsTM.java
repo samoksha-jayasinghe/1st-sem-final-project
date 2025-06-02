@@ -1,15 +1,13 @@
 package lk.ijse.bakerymanagment.dto.tm;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @AllArgsConstructor
 @NoArgsConstructor
-/*@Getter
+@Getter
 @Setter
-@ToString*/
-@Data
+@ToString
+
 
 
 public class OrderDetailsTM {

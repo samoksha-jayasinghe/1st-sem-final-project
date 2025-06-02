@@ -57,12 +57,12 @@ public class IngredientModel {
 
         while (resultSet.next()) {
             IngredientDto dto = new IngredientDto(
-                    resultSet.getString("item_id"),
-                    resultSet.getString("product_id"),
-                    resultSet.getString("batch_no"),
-                    resultSet.getString("expiry_date"),
-                    resultSet.getInt("quantity"),
-                    resultSet.getString("ingredient_name")
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getInt(5),
+                    resultSet.getString(6)
             );
             ingredientDtoList.add(dto);
         }

@@ -121,17 +121,14 @@
       </Pane>
       <VBox layoutX="439.0" prefHeight="1066.0" prefWidth="1511.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="439.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox prefHeight="100.0" prefWidth="1073.0">
+            <HBox prefHeight="144.0" prefWidth="1511.0">
                <children>
-                  <TextField fx:id="txtSearch" accessibleText="Search" prefHeight="25.0" prefWidth="298.0" promptText="🔍 | Search ">
+                  <TextField fx:id="txtSearch1" accessibleText="Search" prefHeight="25.0" prefWidth="298.0" promptText="🔍 | Search " HBox.hgrow="ALWAYS">
                      <HBox.margin>
-                        <Insets left="1114.0" top="42.0" />
+                        <Insets left="1000.0" right="50.0" top="20.0" />
                      </HBox.margin>
                   </TextField>
                </children>
-               <VBox.margin>
-                  <Insets left="37.0" />
-               </VBox.margin>
             </HBox>
             <TableView fx:id="tblSupplier" onMouseClicked="#onClickedTable" prefHeight="725.0" prefWidth="1380.0" stylesheets="@Table.css">
                <columns>

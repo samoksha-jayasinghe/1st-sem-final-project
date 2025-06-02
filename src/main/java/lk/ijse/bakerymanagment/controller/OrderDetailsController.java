@@ -1,6 +1,5 @@
 package lk.ijse.bakerymanagment.controller;
 
-import com.google.protobuf.StringValue;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
@@ -42,6 +41,7 @@ public class OrderDetailsController implements Initializable {
 
     public Button txtBack;
     public TextField txtSearch;
+    public Button btnPlaceOrder;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -214,5 +214,42 @@ int pressedQty = Integer.parseInt(quantity);
         }
     }
 
+
+    public void btnPlaceOrderOnAction(ActionEvent actionEvent) {
+        System.out.println("Place order clicked");
+
+        if (tblOrderDetails.getItems().isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "There are no order details to place!").show();
+            return;
+        }
+
+        try {
+            System.out.println("Confirmed to place order");
+            // Convert TableView items to a list of DTOs
+            OrderdetailsDto orderdetailsDto = new OrderdetailsDto();
+            for (OrderDetailsTM orderDetailsTM : tblOrderDetails.getItems()) {
+                orderdetailsDto = new OrderdetailsDto(
+                        null,
+                        orderDetailsTM.getProductId(),
+                        orderDetailsTM.getQty()
+                );
+            }
+
+            // Save order details via model
+            boolean isPlaced = orderdetailsModel.addOrderDetails(orderdetailsDto);
+            System.out.println("Order placement returned: " + isPlaced);
+
+            if (isPlaced) {
+                new Alert(Alert.AlertType.INFORMATION, "Order placed successfully!").show();
+                resetPage(); // clear all fields and reload table
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Failed to place order! Please try again.").show();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Error occurred while placing order!").show();
+        }
+    }
 
 }

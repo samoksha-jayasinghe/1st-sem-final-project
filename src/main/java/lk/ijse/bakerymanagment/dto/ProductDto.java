@@ -17,4 +17,6 @@ public class ProductDto {
     private int stocklevel;
     private int price;
     private String category;
+    private int qty;
+
 }

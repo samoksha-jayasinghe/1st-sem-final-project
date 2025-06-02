@@ -44,6 +44,8 @@ public class ProductController implements Initializable {
     private final ProductModel productModel = new ProductModel();
 
     public TextField txtSearch;
+    public TableColumn colQty;
+    public TextField txtQty;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -52,6 +54,7 @@ public class ProductController implements Initializable {
         colStockLevel.setCellValueFactory(new PropertyValueFactory<>("stocklevel"));
         colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         colCategory.setCellValueFactory(new PropertyValueFactory<>("category"));
+        colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
 
         try {
             resetPage();
@@ -70,7 +73,8 @@ public class ProductController implements Initializable {
                                 productDto.getName(),
                                 productDto.getStocklevel(),
                                 productDto.getPrice(),
-                                productDto.getCategory()
+                                productDto.getCategory(),
+                                productDto.getQty()
                         )).toList()
         ));
     }
@@ -105,16 +109,19 @@ public class ProductController implements Initializable {
         String stockLevel = txtStockLevel.getText();
         String price = txtPrice.getText();
         String category = txtCategory.getText();
+        String qty = txtQty.getText();
 
         int preseStock = Integer.parseInt(stockLevel);
         int presePrice = Integer.parseInt(price);
+        int preseQty = Integer.parseInt(qty);
 
         ProductDto productDto = new ProductDto(
                 productId,
                 name,
                 presePrice,
                 preseStock,
-                category
+                category,
+                preseQty
         );
 
         try {
@@ -138,16 +145,19 @@ public class ProductController implements Initializable {
         String stockLevel = txtStockLevel.getText();
         String price = txtPrice.getText();
         String category = txtCategory.getText();
+        String qty = txtQty.getText();
 
         int preseStock = Integer.parseInt(stockLevel);
         int presePrice = Integer.parseInt(price);
+        int preseQty = Integer.parseInt(qty);
 
         ProductDto productDto = new ProductDto(
                 productId,
                 name,
                 presePrice,
                 preseStock,
-                category
+                category,
+                preseQty
         );
 
         try {

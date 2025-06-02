@@ -87,6 +87,12 @@
                      </VBox.margin>
                   </Text>
                   <TextField fx:id="txtCategory" prefHeight="25.0" prefWidth="265.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Qty" wrappingWidth="297.13671875">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Text>
+                  <TextField fx:id="txtQty" prefHeight="25.0" prefWidth="265.0" style="-fx-background-radius: 10; -fx-border-radius: 10;" />
                </children>
                <padding>
                   <Insets top="54.0" />
@@ -130,25 +136,23 @@
       </Pane>
       <VBox layoutX="439.0" prefHeight="1066.0" prefWidth="1511.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="439.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <HBox prefHeight="100.0" prefWidth="1073.0">
+            <HBox prefHeight="144.0" prefWidth="1511.0">
                <children>
-                  <TextField fx:id="txtSearch" accessibleText="Search" prefHeight="25.0" prefWidth="298.0" promptText="🔍 | Search ">
+                  <TextField fx:id="txtSearch1" accessibleText="Search" prefHeight="25.0" prefWidth="298.0" promptText="🔍 | Search " HBox.hgrow="ALWAYS">
                      <HBox.margin>
-                        <Insets left="1114.0" top="42.0" />
+                        <Insets left="1000.0" right="50.0" top="20.0" />
                      </HBox.margin>
                   </TextField>
                </children>
-               <VBox.margin>
-                  <Insets left="37.0" />
-               </VBox.margin>
             </HBox>
             <TableView fx:id="tblProduct" onMouseClicked="#onClickedTable" prefHeight="725.0" prefWidth="1380.0" stylesheets="@Table.css">
                <columns>
                   <TableColumn fx:id="colProductId" prefWidth="196.0" text="Product Id" />
                   <TableColumn fx:id="colName" prefWidth="328.0" text="Name" />
                   <TableColumn fx:id="colStockLevel" prefWidth="271.0" text="Stock Level" />
-                  <TableColumn fx:id="colPrice" prefWidth="271.0" text="Price" />
-                  <TableColumn fx:id="colCategory" prefWidth="356.0" text="Category" />
+                  <TableColumn fx:id="colPrice" prefWidth="148.0" text="Price" />
+                  <TableColumn fx:id="colCategory" prefWidth="266.0" text="Category" />
+                  <TableColumn fx:id="colQty" prefWidth="288.0" text="Qty" />
                </columns>
                <VBox.margin>
                   <Insets bottom="1.0" left="44.0" right="44.0" top="171.0" />

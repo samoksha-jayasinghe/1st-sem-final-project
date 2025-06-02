@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
@@ -21,6 +22,7 @@ public class DashbordController implements Initializable {
     public ComboBox cmbOverView;
     public Button btnOverView;
     public AnchorPane ancOverView;
+    public Label lblOrderPlace;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -68,7 +70,7 @@ public class DashbordController implements Initializable {
 
     private void loadPageNames(){
         try {
-            cmbOverView.setItems(FXCollections.observableArrayList("Customer Page","Employee Page","Feedback Page","Ingredients Page", "Inventory Page", "Invoice Page", "Item Page", "Order Page", "Orderdetails Page", "Payment Page", "Product Page", "Supplier Page", "User Page"));
+            cmbOverView.setItems(FXCollections.observableArrayList("Customer Page","Employee Page","Feedback Page","Ingredients Page", "Inventory Page", "Invoice Page", "Item Page", "Order Page", "Orderdetails Page", "Payment Page", "Product Page", "Supplier Page", "Users Page"));
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -106,6 +108,9 @@ public class DashbordController implements Initializable {
         navigateTo("/view/ButtonSet.fxml");
     }
 
+    public void onClickedLbl(MouseEvent mouseEvent) {
+        navigateTo("/view/OrderDetailsPage.fxml");
+    }
 }
 
 

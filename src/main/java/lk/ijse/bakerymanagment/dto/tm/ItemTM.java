@@ -1,11 +1,13 @@
 package lk.ijse.bakerymanagment.dto.tm;
 
-import lombok.Data;
+import lombok.*;
 
-/*@Getter
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
 @Setter
-@ToString*/
-@Data
+@ToString
+
 
 public class ItemTM {
 
@@ -16,8 +18,8 @@ public class ItemTM {
         private int quantity;
         private String expirDate;
 
-        public ItemTM(String itemId, String name, String category, int price, int quantity, String expirDate) {
-        }
+
+
 
        /* public ItemTM(String itemId, String name, String category, double price, int quantity, String expirDate) {
         }*/

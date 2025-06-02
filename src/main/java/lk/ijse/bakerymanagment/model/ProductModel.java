@@ -8,22 +8,28 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ProductModel {
+    public static boolean reduceQty(int qty, String productId) throws SQLException, ClassNotFoundException {
+        return CrudUtil.execute("UPDATE product SET qty = qty - ? WHERE product_id = ?", qty, productId);
+    }
+
     public boolean saveProduct(ProductDto productDto) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("INSERT INTO product VALUES (?,?,?,?,?)",
+        return CrudUtil.execute("INSERT INTO product VALUES (?,?,?,?,?,?)",
                 productDto.getProductId(),
                 productDto.getName(),
                 productDto.getStocklevel(),
                 productDto.getPrice(),
-                productDto.getCategory()
+                productDto.getCategory(),
+                productDto.getQty()
 
         );
     }
     public boolean updateproduct(ProductDto productDto) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("UPDATE product SET name=?, stock_level=? , price=?, category=? WHERE product_id=?",
+        return CrudUtil.execute("UPDATE product SET name=?, stock_level=? , price=?, category=?, qty=? WHERE product_id=?",
                 productDto.getName(),
                 productDto.getStocklevel(),
                 productDto.getPrice(),
                 productDto.getCategory(),
+                productDto.getQty(),
                 productDto.getProductId()
         );
     }
@@ -40,7 +46,8 @@ public class ProductModel {
                     resultSet.getString("Name"),
                     resultSet.getInt("Stocklevel"),
                     resultSet.getInt("Price"),
-                    resultSet.getString("Category")
+                    resultSet.getString("Category"),
+                    resultSet.getInt("qty")
             );
             return dto;
         }
@@ -55,7 +62,8 @@ public class ProductModel {
                     resultSet.getString(2),
                     resultSet.getInt(3),
                     resultSet.getInt(4),
-                    resultSet.getString(5)
+                    resultSet.getString(5),
+                    resultSet.getInt(6)
             );
             productDtoArrayList.add(dto);
         }
@@ -63,7 +71,7 @@ public class ProductModel {
     }
     public String getNextproductId() throws ClassNotFoundException , SQLException{
         ResultSet resultSet = CrudUtil.execute("SELECT product_id FROM product ORDER BY product_id DESC LIMIT 1");
-        char tableCharacter = 'U';
+        char tableCharacter = 'P';
 
         if(resultSet.next()){
             String lastId = resultSet.getString(1);

@@ -72,7 +72,8 @@ public class IngredientController implements Initializable {
                                 ingredientDto.getProductId(),
                                 ingredientDto.getBatchno(),
                                 ingredientDto.getDate(),
-                                ingredientDto.getQty()
+                                ingredientDto.getQty(),
+                                ingredientDto.getIngredientName()
                         )).toList()
         ));
     }

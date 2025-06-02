@@ -5,6 +5,7 @@ module lk.ijse.bakerymanagment {
     requires static lombok;
     requires java.desktop;
     requires com.google.protobuf;
+    requires mysql.connector.j;
 
 
     //opens lk.ijse.bakerymanagment to javafx.fxml;

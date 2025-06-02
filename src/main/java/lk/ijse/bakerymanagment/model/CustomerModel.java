@@ -33,22 +33,24 @@ public class CustomerModel {
         return CrudUtil.execute("DELETE FROM customer WHERE customer_id = ?",
                 customerId);
     }
-    /*public CustomerDto searchCustomer(String customerId) throws ClassNotFoundException , SQLException {
-        ResultSet resultSet = CrudUtil.execute("SELECT * FROM customer WHERE customer_id = ? ",
-                customerId);
-        if (resultSet.next()) {
+    public ArrayList<CustomerDto> searchCustomer(String search) throws SQLException, ClassNotFoundException {
+        ArrayList<CustomerDto> dtos = new ArrayList<>();
+        String sql = "SELECT  * from customer where customer_id LIKE ? OR first_name LIKE ? OR address LIKE ? OR email LIKE ? OR contact LIKE ? OR user_id LIKE ?";
+        String pattern = "%" + search + "%";
+        ResultSet resultSet = CrudUtil.execute(sql, pattern ,pattern, pattern, pattern);
+        while (resultSet.next()) {
             CustomerDto dto = new CustomerDto(
-                    resultSet.getString("customerId"),
-                    resultSet.getString("firstName"),
-                    resultSet.getString("address"),
-                    resultSet.getString("email"),
-                    resultSet.getString("contact"),
-                    resultSet.getString("userId")
+                    resultSet.getString(1),
+                    resultSet.getString(2),
+                    resultSet.getString(3),
+                    resultSet.getString(4),
+                    resultSet.getString(5),
+                    resultSet.getString(6)
             );
-            return dto;
+            dtos.add(dto);
         }
-        return null;
-    }*/
+        return dtos;
+    }
     public ArrayList<CustomerDto> getAllCustomer() throws ClassNotFoundException , SQLException {
        ResultSet resultSet = CrudUtil.execute("SELECT * FROM customer");
        ArrayList<CustomerDto> customerDtoArrayList = new ArrayList<>();

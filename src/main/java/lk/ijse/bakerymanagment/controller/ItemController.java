@@ -154,6 +154,7 @@ public class ItemController implements Initializable {
     }
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
+        String id = lblItemId.getText();
         String name = txtname.getText();
         String category = txtCategory.getText();
         String price = txtPrice.getText();
@@ -162,7 +163,13 @@ public class ItemController implements Initializable {
 
         int presePrice = Integer.parseInt(price);
         int preseQuantity = Integer.parseInt(quantity);
-        ItemDto itemDto = new ItemDto(name, category, presePrice, preseQuantity, expireDate
+        ItemDto itemDto = new ItemDto(
+                id,
+                name,
+                category,
+                presePrice,
+                preseQuantity,
+                expireDate
         );
 
 

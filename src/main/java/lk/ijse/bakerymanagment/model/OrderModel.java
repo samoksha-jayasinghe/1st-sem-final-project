@@ -19,12 +19,12 @@ public class OrderModel {
         );
     }
     public boolean updateOrder(OrderDto orderDto) throws ClassNotFoundException , SQLException {
-        return CrudUtil.execute("UPDATE orders SET customet_id=?, order_date=? , status=?, total_amount=?  , WHERE order_id=?",
-                orderDto.getOrderId(),
+        return CrudUtil.execute("UPDATE orders SET customer_id=?, order_date=? , status=?, total_amount=?  WHERE order_id=?",
                 orderDto.getCustomerId(),
                 orderDto.getOrderdate(),
                 orderDto.getStatus(),
-                orderDto.getTotalAmount()
+                orderDto.getTotalAmount(),
+                orderDto.getOrderId()
         );
     }
     public boolean deleteOrder(String OrderId) throws ClassNotFoundException , SQLException {

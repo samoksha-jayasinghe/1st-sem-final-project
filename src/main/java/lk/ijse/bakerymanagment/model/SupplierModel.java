@@ -8,6 +8,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class SupplierModel {
+    /*public static boolean reduceQty(int qty, String SupplierId) throws SQLException, ClassNotFoundException {
+        return CrudUtil.execute("UPDATE product SET qty = qty - ? WHERE product_id = ?", qty, productId);
+    }*/
+
     public boolean saveSupplier(SupplierDto supplierDto) throws ClassNotFoundException , SQLException {
         return CrudUtil.execute("INSERT INTO supplier VALUES (?,?,?,?)",
                 supplierDto.getSupplierId(),

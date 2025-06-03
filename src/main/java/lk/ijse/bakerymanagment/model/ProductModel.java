@@ -1,5 +1,6 @@
 package lk.ijse.bakerymanagment.model;
 
+import lk.ijse.bakerymanagment.dto.OrderdetailsDto;
 import lk.ijse.bakerymanagment.dto.ProductDto;
 import lk.ijse.bakerymanagment.util.CrudUtil;
 
@@ -83,5 +84,26 @@ public class ProductModel {
         }
         return tableCharacter +"001";
     }
+
+    /*public boolean addProduct(ProductDto productDto) throws SQLException, ClassNotFoundException {
+        boolean isInserted = false;
+
+        // Generate a new orderDetail ID for each record
+        String newId = getNextproductId();
+        productDto.setProductId(newId);
+
+        isInserted = saveProduct(productDto);
+        if (!isInserted) {
+            return false;
+        }
+
+        System.out.println(productDto.getQty());
+
+        boolean isProductUpdated = ProductModel.reduceQty(orderdetailsDto.getQty(), orderdetailsDto.getProductId());
+        if (!isProductUpdated) {
+            return false;
+        }
+        return true;
+    }*/
 
 }

@@ -47,7 +47,7 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="121.0" prefWidth="419.0" text="Production Placement">
+                        <Label fx:id="lblProduct" alignment="CENTER" onMouseClicked="#onClickedProduct" prefHeight="121.0" prefWidth="419.0" text="Production Placement">
                            <font>
                               <Font name="Comic Sans MS Bold Italic" size="24.0" />
                            </font>

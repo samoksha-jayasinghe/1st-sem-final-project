@@ -96,28 +96,16 @@ public class OrderDetailsController implements Initializable {
         String productId = txtProductId.getText();
         String quantity = txtQuantity.getText();
 
-       // int qty = Integer.parseInt(quantity);
-int pressedQty = Integer.parseInt(quantity);
+        int pressedQty = Integer.parseInt(quantity);
 
-        OrderdetailsDto orderdetailsDto = new OrderdetailsDto(
-                orderId,
-                productId,
-                pressedQty
-        );
-        try {
-            boolean isSaved = orderdetailsModel.saveOrderdetails(orderdetailsDto);
-            if (isSaved) {
-                resetPage();
-                new Alert(Alert.AlertType.INFORMATION, "Orderdetails saved successfully", ButtonType.OK).show();
-            }else {
-                new Alert(Alert.AlertType.ERROR, "Something went wrong", ButtonType.OK).show();
-            }
+        OrderDetailsTM orderDetailsTM = new OrderDetailsTM(orderId, productId, pressedQty);
 
-        }catch (Exception e){
-            e.printStackTrace();
-            new Alert(Alert.AlertType.ERROR, "Something went wrong", ButtonType.OK).show();
-        }
+        tblOrderDetails.getItems().add(orderDetailsTM); // Only update UI table
+
+        txtProductId.clear();
+        txtQuantity.clear();
     }
+
 
     public void btnUpdateOnAction(ActionEvent actionEvent) {
         String orderId = lblOrderId.getText();
@@ -229,7 +217,7 @@ int pressedQty = Integer.parseInt(quantity);
             OrderdetailsDto orderdetailsDto = new OrderdetailsDto();
             for (OrderDetailsTM orderDetailsTM : tblOrderDetails.getItems()) {
                 orderdetailsDto = new OrderdetailsDto(
-                        null,
+                        orderDetailsTM.getOrderid(),
                         orderDetailsTM.getProductId(),
                         orderDetailsTM.getQty()
                 );

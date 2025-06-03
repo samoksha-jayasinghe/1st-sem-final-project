@@ -9,7 +9,9 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import lk.ijse.bakerymanagment.dto.OrderdetailsDto;
 import lk.ijse.bakerymanagment.dto.ProductDto;
+import lk.ijse.bakerymanagment.dto.tm.OrderDetailsTM;
 import lk.ijse.bakerymanagment.dto.tm.PaymentTM;
 import lk.ijse.bakerymanagment.dto.tm.ProductTM;
 import lk.ijse.bakerymanagment.model.ProductModel;
@@ -46,6 +48,7 @@ public class ProductController implements Initializable {
     public TextField txtSearch;
     public TableColumn colQty;
     public TextField txtQty;
+    public Button btnProduct;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -242,4 +245,44 @@ public class ProductController implements Initializable {
     }
 
 
+    /*public void btnProductOnAction(ActionEvent actionEvent) {
+        System.out.println("Set Product clicked");
+
+        if (tblProduct.getItems().isEmpty()) {
+            new Alert(Alert.AlertType.WARNING, "There are no Product to set!").show();
+            return;
+        }
+
+        try {
+            System.out.println("Confirmed to Product");
+            // Convert TableView items to a list of DTOs
+            ProductDto productDto = new ProductDto();
+            for (ProductTM productTM : tblProduct.getItems()) {
+                productDto = new ProductDto(
+                        productTM.getProductId(),
+                        productTM.getName(),
+                        productDto.getStocklevel(),
+                        productDto.getPrice(),
+                        productDto.getCategory(),
+                        productDto.getQty()
+                );
+            }
+
+            // Save order details via model
+            boolean isPlaced = productModel.addOrderDetails(productDto);
+            System.out.println("Order placement returned: " + isPlaced);
+
+            if (isPlaced) {
+                new Alert(Alert.AlertType.INFORMATION, "Order placed successfully!").show();
+                resetPage(); // clear all fields and reload table
+            } else {
+                new Alert(Alert.AlertType.ERROR, "Failed to place order! Please try again.").show();
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            new Alert(Alert.AlertType.ERROR, "Error occurred while placing order!").show();
+        }
+    }
+    }*/
 }

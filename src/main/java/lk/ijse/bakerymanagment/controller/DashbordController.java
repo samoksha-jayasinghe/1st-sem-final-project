@@ -23,6 +23,7 @@ public class DashbordController implements Initializable {
     public Button btnOverView;
     public AnchorPane ancOverView;
     public Label lblOrderPlace;
+    public Label lblProduct;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -110,6 +111,9 @@ public class DashbordController implements Initializable {
 
     public void onClickedLbl(MouseEvent mouseEvent) {
         navigateTo("/view/OrderDetailsPage.fxml");
+    }
+
+    public void onClickedProduct(MouseEvent mouseEvent) {
     }
 }
 
